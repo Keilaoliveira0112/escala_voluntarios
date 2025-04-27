@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Escala de Voluntários</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <h1>Escala de Voluntários</h1>
+
+    <label for="voluntario">Voluntário:</label>
+   <select id="voluntario"></select>
+
+
+    <label for="departamento">Departamento:</label>
+    <select id="departamento">
+        <option>Relacional</option>
+        <option>Staff</option>
+        <option>Recepção Interna</option>
+        <option>Recepção Externa</option>
+        <option>Estacionamento</option>
+    </select>
+
+    <label for="horario">Horário:</label>
+    <select id="horario">
+        <option>Domingo 10h</option>
+        <option>Domingo 18h</option>
+        <option>Quinta 20h</option>
+    </select>
+
+    <label for="data">Data da Escala:</label>
+    <input type="date" id="data">
+
+
+    <button onclick="escalar()">Escalar Voluntário</button>
+
+    <div class="mensagem" id="mensagem"></div>
+
+    <h2>Escala Atual</h2>
+    <button onclick="exportarParaExcel()">Exportar para Excel</button>
+    <button onclick="exportarParaCSV()">Exportar para CSV</button>
+
+
+    <table class="tabela">
+       <thead>
+  <tr>
+    <th>Voluntário</th>
+    <th>Departamento</th>
+    <th>Horário</th>
+    <th>Data</th>
+    <th>Ações</th>
+  </tr>
+</thead>
+
+        <tbody id="tabelaEscala">
+            <!-- Escalas aparecem aqui -->
+        </tbody>
+    </table>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

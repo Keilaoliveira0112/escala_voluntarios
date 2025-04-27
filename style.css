@@ -1,0 +1,48 @@
+body {
+  font-family: Arial, sans-serif;
+  padding: 2rem;
+  background: #f8f9fa;
+}
+
+h1 {
+  color: #343a40;
+}
+
+label, select, button {
+  display: block;
+  margin: 10px 0;
+}
+
+select, button {
+  padding: 8px;
+  font-size: 16px;
+}
+
+.mensagem {
+  margin-top: 10px;
+  font-weight: bold;
+}
+
+.sucesso {
+  color: green;
+}
+
+.erro {
+  color: red;
+}
+
+.tabela {
+  margin-top: 20px;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+.tabela th, .tabela td {
+  border: 1px solid #ccc;
+  padding: 8px;
+  text-align: center;
+}
+
+.tabela th {
+  background-color: #e9ecef;
+}
