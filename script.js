@@ -52,7 +52,7 @@ const voluntarios = [
 
 ];
 
-const escala = [];
+let escala = JSON.parse(localStorage.getItem("escala")) || [];
 
 window.onload = function () {
   const select = document.getElementById("voluntario");
@@ -62,7 +62,11 @@ window.onload = function () {
     option.textContent = v.nome;
     select.appendChild(option);
   });
+
+  // Atualiza a tabela com dados já salvos, se houver
+  atualizarTabela();
 };
+
 
 function getNomeVoluntario(id) {
   const v = voluntarios.find(v => v.id == id);
@@ -81,6 +85,8 @@ function escalar() {
   const horario = document.getElementById("horario").value;
   const data = document.getElementById("data").value;
   const mensagem = document.getElementById("mensagem");
+  
+
 
   if (!data) {
     mensagem.textContent = "❗ Por favor, selecione uma data.";
@@ -90,6 +96,7 @@ function escalar() {
 
   if (podeEscalar(voluntarioId, horario, data)) {
     escala.push({ voluntarioId, departamento, horario, data });
+    localStorage.setItem("escala", JSON.stringify(escala));
     mensagem.textContent = "✅ Voluntário escalado com sucesso!";
     mensagem.className = "mensagem sucesso";
     atualizarTabela();
@@ -118,6 +125,8 @@ function atualizarTabela() {
 
 function removerEscala(index) {
   escala.splice(index, 1); // Remove do array
+  localStorage.setItem("escala", JSON.stringify(escala));
+
   atualizarTabela(); // Atualiza a tabela na tela
 }
 
